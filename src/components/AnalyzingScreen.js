@@ -30,7 +30,7 @@ const AnalyzingScreen = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full relative">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 opacity-50">
+      <div className="absolute inset-0 z-0 opacity-[0.09]">
         <img
           src="/images/analyzing_background.png"
           alt="Background"
@@ -47,12 +47,12 @@ const AnalyzingScreen = () => {
 
         {isLoading ? (
           <>
-            <p className="text-gray-700 mb-8 bg-white/70 px-6 py-3 rounded-lg shadow-sm inline-block">
+            <p className="text-gray-700 mb-8 px-6 py-3 rounded-lg inline-block">
               {t('analyzing.subtitle')}
             </p>
 
             <motion.div
-              className="flex justify-center space-x-3 my-8 bg-white/50 p-4 rounded-full shadow-sm"
+              className="flex justify-center space-x-3 my-8 p-4 rounded-full"
               variants={containerVariants}
               initial="initial"
               animate="animate"
@@ -66,7 +66,7 @@ const AnalyzingScreen = () => {
               ))}
             </motion.div>
 
-            <div className="max-w-md mx-auto bg-white/80 p-6 rounded-xl shadow-md">
+            <div className="max-w-md mx-auto p-6 rounded-xl">
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
@@ -94,7 +94,7 @@ const AnalyzingScreen = () => {
             </div>
           </>
         ) : error ? (
-          <div className="bg-white/80 p-6 rounded-xl shadow-md text-red-500 mt-4">
+          <div className="p-6 rounded-xl text-red-500 mt-4">
             <p>{error}</p>
             <button
               className="mt-4 bg-red-500 text-white px-6 py-2 rounded-full"
