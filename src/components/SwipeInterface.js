@@ -3,8 +3,10 @@ import { useScentContext } from '../context/ScentContext';
 import { scents } from '../data/scents';
 import SwipeCard from './SwipeCard';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const SwipeInterface = () => {
+  const { t } = useTranslation();
   const {
     currentScentIndex,
     handleLike,
@@ -37,8 +39,8 @@ const SwipeInterface = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full">
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold mb-2">NosePrint</h1>
-        <p className="text-gray-600">Swipe to discover your scent profile</p>
+        <h1 className="text-3xl font-bold mb-2">{t('app.title')}</h1>
+        <p className="text-gray-600">{t('app.subtitle')}</p>
       </div>
 
       <div className="relative w-[300px] h-[400px] mb-8">
@@ -50,12 +52,12 @@ const SwipeInterface = () => {
           />
         ) : (
           <div className="flex flex-col items-center justify-center h-full bg-white rounded-2xl shadow-md p-8">
-            <p className="text-xl mb-4">You've swiped through all scents!</p>
+            <p className="text-xl mb-4">{t('swipe.allSwiped')}</p>
             <button
               onClick={finishSwiping}
               className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
             >
-              Analyze My Preferences
+              {t('swipe.analyze')}
             </button>
           </div>
         )}
@@ -94,7 +96,7 @@ const SwipeInterface = () => {
         </div>
         <div className="flex justify-between mt-2 text-xs text-gray-500">
           <span>{scents.length - remainingScents.length} / {scents.length}</span>
-          <span>{Math.round(progress)}% complete</span>
+          <span>{Math.round(progress)}% {t('swipe.complete')}</span>
         </div>
       </div>
     </div>

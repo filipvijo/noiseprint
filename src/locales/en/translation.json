@@ -1,0 +1,80 @@
+{
+  "app": {
+    "title": "NosePrint",
+    "subtitle": "Swipe to discover your scent profile"
+  },
+  "swipe": {
+    "analyze": "Analyze My Preferences",
+    "complete": "complete",
+    "allSwiped": "You've swiped through all scents!"
+  },
+  "gender": {
+    "title": "Choose Your Preference",
+    "subtitle": "Select the type of fragrances you're interested in to get personalized recommendations",
+    "men": "Men's Fragrances",
+    "menDesc": "Discover masculine scents with woody, spicy, and fresh notes",
+    "women": "Women's Fragrances",
+    "womenDesc": "Explore feminine scents with floral, fruity, and sweet notes",
+    "unisex": "Unisex Fragrances",
+    "unisexDesc": "Find versatile scents that transcend traditional gender boundaries",
+    "priceRange": "Price Range",
+    "minPrice": "Minimum Price",
+    "maxPrice": "Maximum Price",
+    "getRecommendations": "Get My Recommendations"
+  },
+  "analyzing": {
+    "title": "Analyzing Your Preferences",
+    "subtitle": "Please wait while we create your personalized scent profile"
+  },
+  "results": {
+    "title": "Your Scent Profile",
+    "subtitle": "Based on your preferences, we've created your unique scent profile",
+    "radar": "Scent Radar",
+    "dominantFamily": "Your dominant scent family:",
+    "story": "Your Scent Story",
+    "recommendations": "Recommended Perfumes",
+    "price": "Price",
+    "shopNow": "Shop Now",
+    "startOver": "Start Over",
+    "colorPalette": "Complementary Color Palette",
+    "colorPaletteDesc": "Colors that complement your scent profile",
+    "celebrities": "Celebrity Scent Twins",
+    "celebritiesDesc": "Celebrities who share your fragrance preferences"
+  },
+  "families": {
+    "Citrus": "Citrus",
+    "Floral": "Floral",
+    "Woody": "Woody",
+    "Oriental": "Oriental",
+    "Fresh": "Fresh"
+  },
+  "language": {
+    "en": "English",
+    "fr": "French",
+    "sr": "Serbian"
+  },
+  "colorPalettes": {
+    "Citrus": "Citrus scents pair beautifully with bright, sunny colors. Gold and yellow reflect the zesty energy of citrus, while orange adds warmth. Beige and white provide balance and freshness to complete the palette.",
+    "Floral": "Floral scents harmonize with soft, romantic colors. Light pinks and lavenders echo the delicate nature of floral notes, while whites and ghost whites add an ethereal quality that enhances the feminine elegance.",
+    "Woody": "Woody scents call for earthy, grounding colors. Rich browns like saddle and sienna reflect the depth of woody notes, while tan and beige add warmth. White provides contrast and balance.",
+    "Oriental": "Oriental scents demand rich, opulent colors. Burgundy and dark red capture the sensual intensity, while gold adds luxury and opulence. White creates necessary contrast to prevent overwhelming.",
+    "Fresh": "Fresh scents align with cool, airy colors. Light blues and cyans evoke water and sky, creating a clean, invigorating palette. White adds brightness and purity to complete the refreshing feel."
+  },
+  "celebrities": {
+    "jenniferAniston": "Known for preferring clean, citrusy scents that reflect her California lifestyle.",
+    "leonardoDiCaprio": "Reportedly favors fresh, citrus-based colognes with a sophisticated edge.",
+    "giseleBundchen": "The supermodel is known to appreciate bright, energetic citrus fragrances.",
+    "taylorSwift": "Has expressed love for floral fragrances, particularly those with notes of gardenia and vanilla.",
+    "nataliePortman": "As the face of Miss Dior, she embodies the elegant floral character of the fragrance.",
+    "emmaWatson": "Known for preferring natural, delicate floral scents with ethical sourcing.",
+    "idrisElba": "The actor gravitates toward woody, masculine fragrances with depth and character.",
+    "georgeClooney": "Known for his classic taste in woody, sophisticated colognes.",
+    "angelinaJolie": "Reportedly prefers complex fragrances with woody base notes and mysterious character.",
+    "tomFord": "The designer himself embodies the luxurious oriental fragrances his brand is famous for.",
+    "rihanna": "Her own perfume line features rich, oriental notes that match her bold personality.",
+    "johnnyDepp": "Known for favoring deep, oriental fragrances with a touch of mystery and rebellion.",
+    "matthewMcConaughey": "Embodies the fresh, outdoorsy scent profile with his laid-back personality.",
+    "kateMiddleton": "The Princess of Wales reportedly favors fresh, elegant scents with royal sophistication.",
+    "chrisHemsworth": "The Australian actor represents the fresh, oceanic scent profile perfectly with his surfer background."
+  }
+}

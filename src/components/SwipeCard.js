@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const SwipeCard = ({ scent, onSwipe }) => {
+  const { t } = useTranslation();
   const [exitX, setExitX] = useState(0);
 
   // Motion values for drag
@@ -53,7 +55,7 @@ const SwipeCard = ({ scent, onSwipe }) => {
           <p className="text-sm opacity-90">{scent.description}</p>
           <div className="mt-3 text-xs opacity-70 flex justify-center">
             <span className="bg-white/20 px-2 py-1 rounded-full">
-              {scent.family}
+              {t(`families.${scent.family}`)}
             </span>
           </div>
         </div>

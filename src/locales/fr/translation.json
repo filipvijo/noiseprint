@@ -1,0 +1,80 @@
+{
+  "app": {
+    "title": "NosePrint",
+    "subtitle": "Glissez pour découvrir votre profil olfactif"
+  },
+  "swipe": {
+    "analyze": "Analyser Mes Préférences",
+    "complete": "complété",
+    "allSwiped": "Vous avez parcouru tous les parfums !"
+  },
+  "gender": {
+    "title": "Choisissez Votre Préférence",
+    "subtitle": "Sélectionnez le type de parfums qui vous intéressent pour obtenir des recommandations personnalisées",
+    "men": "Parfums pour Hommes",
+    "menDesc": "Découvrez des parfums masculins aux notes boisées, épicées et fraîches",
+    "women": "Parfums pour Femmes",
+    "womenDesc": "Explorez des parfums féminins aux notes florales, fruitées et sucrées",
+    "unisex": "Parfums Unisexes",
+    "unisexDesc": "Trouvez des parfums polyvalents qui transcendent les frontières traditionnelles entre les genres",
+    "priceRange": "Gamme de Prix",
+    "minPrice": "Prix Minimum",
+    "maxPrice": "Prix Maximum",
+    "getRecommendations": "Obtenir Mes Recommandations"
+  },
+  "analyzing": {
+    "title": "Analyse de Vos Préférences",
+    "subtitle": "Veuillez patienter pendant que nous créons votre profil olfactif personnalisé"
+  },
+  "results": {
+    "title": "Votre Profil Olfactif",
+    "subtitle": "Basé sur vos préférences, nous avons créé votre profil olfactif unique",
+    "radar": "Radar Olfactif",
+    "dominantFamily": "Votre famille olfactive dominante :",
+    "story": "Votre Histoire Olfactive",
+    "recommendations": "Parfums Recommandés",
+    "price": "Prix",
+    "shopNow": "Acheter",
+    "startOver": "Recommencer",
+    "colorPalette": "Palette de Couleurs Complémentaires",
+    "colorPaletteDesc": "Couleurs qui complètent votre profil olfactif",
+    "celebrities": "Célébrités aux Goûts Similaires",
+    "celebritiesDesc": "Célébrités qui partagent vos préférences olfactives"
+  },
+  "families": {
+    "Citrus": "Agrumes",
+    "Floral": "Floral",
+    "Woody": "Boisé",
+    "Oriental": "Oriental",
+    "Fresh": "Frais"
+  },
+  "language": {
+    "en": "Anglais",
+    "fr": "Français",
+    "sr": "Serbe"
+  },
+  "colorPalettes": {
+    "Citrus": "Les parfums d'agrumes s'associent magnifiquement aux couleurs vives et ensoleillées. L'or et le jaune reflètent l'énergie pétillante des agrumes, tandis que l'orange ajoute de la chaleur. Le beige et le blanc apportent équilibre et fraîcheur pour compléter la palette.",
+    "Floral": "Les parfums floraux s'harmonisent avec des couleurs douces et romantiques. Les roses pâles et les lavandes font écho à la nature délicate des notes florales, tandis que les blancs ajoutent une qualité éthérée qui rehausse l'élégance féminine.",
+    "Woody": "Les parfums boisés appellent des couleurs terreuses et ancrées. Les bruns riches comme le brun selle et le terre de Sienne reflètent la profondeur des notes boisées, tandis que le beige ajoute de la chaleur. Le blanc offre un contraste et un équilibre.",
+    "Oriental": "Les parfums orientaux exigent des couleurs riches et opulentes. Le bordeaux et le rouge foncé capturent l'intensité sensuelle, tandis que l'or ajoute luxe et opulence. Le blanc crée un contraste nécessaire pour éviter l'excès.",
+    "Fresh": "Les parfums frais s'alignent avec des couleurs fraîches et aériennes. Les bleus clairs et les cyans évoquent l'eau et le ciel, créant une palette propre et revigorante. Le blanc ajoute luminosité et pureté pour compléter la sensation de fraîcheur."
+  },
+  "celebrities": {
+    "jenniferAniston": "Connue pour préférer les parfums propres et citronnés qui reflètent son style de vie californien.",
+    "leonardoDiCaprio": "Favoriserait les colognes fraîches à base d'agrumes avec une touche sophistiquée.",
+    "giseleBundchen": "Le mannequin est connu pour apprécier les parfums d'agrumes vifs et énergiques.",
+    "taylorSwift": "A exprimé son amour pour les parfums floraux, particulièrement ceux avec des notes de gardénia et de vanille.",
+    "nataliePortman": "En tant qu'égérie de Miss Dior, elle incarne le caractère floral élégant du parfum.",
+    "emmaWatson": "Connue pour préférer les parfums floraux naturels et délicats avec un approvisionnement éthique.",
+    "idrisElba": "L'acteur gravite vers des parfums boisés et masculins avec profondeur et caractère.",
+    "georgeClooney": "Connu pour son goût classique en matière de colognes boisées et sophistiquées.",
+    "angelinaJolie": "Préférerait des parfums complexes avec des notes de fond boisées et un caractère mystérieux.",
+    "tomFord": "Le designer lui-même incarne les luxueux parfums orientaux pour lesquels sa marque est célèbre.",
+    "rihanna": "Sa propre ligne de parfums présente des notes orientales riches qui correspondent à sa personnalité audacieuse.",
+    "johnnyDepp": "Connu pour favoriser les parfums orientaux profonds avec une touche de mystère et de rébellion.",
+    "matthewMcConaughey": "Incarne le profil de parfum frais et nature avec sa personnalité décontractée.",
+    "kateMiddleton": "La Princesse de Galles favoriserait des parfums frais et élégants avec une sophistication royale.",
+    "chrisHemsworth": "L'acteur australien représente parfaitement le profil de parfum frais et océanique avec son passé de surfeur."
+  }
+}

@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useScentContext } from '../context/ScentContext';
 import { GenderType } from '../context/ScentContext';
+import { useTranslation } from 'react-i18next';
 
 const GenderSelectionScreen = () => {
+  const { t } = useTranslation();
   const { selectPreferences, priceRange, setPriceRange } = useScentContext();
   const [selectedGender, setSelectedGender] = useState(null);
   const [localPriceRange, setLocalPriceRange] = useState(priceRange);
@@ -42,9 +44,9 @@ const GenderSelectionScreen = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-8"
       >
-        <h1 className="text-3xl font-bold mb-2 text-purple-800">Choose Your Preference</h1>
+        <h1 className="text-3xl font-bold mb-2 text-purple-800">{t('gender.title')}</h1>
         <p className="text-gray-600 max-w-md mx-auto">
-          Select the type of fragrances you're interested in to get personalized recommendations
+          {t('gender.subtitle')}
         </p>
       </motion.div>
 
@@ -62,9 +64,9 @@ const GenderSelectionScreen = () => {
             <span className="text-6xl">👔</span>
           </div>
           <div className="p-6 text-center">
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Men's Fragrances</h3>
+            <h3 className="text-xl font-semibold text-blue-800 mb-2">{t('gender.men')}</h3>
             <p className="text-blue-600">
-              Discover masculine scents with woody, spicy, and fresh notes
+              {t('gender.menDesc')}
             </p>
           </div>
         </motion.div>
@@ -82,9 +84,9 @@ const GenderSelectionScreen = () => {
             <span className="text-6xl">💄</span>
           </div>
           <div className="p-6 text-center">
-            <h3 className="text-xl font-semibold text-pink-800 mb-2">Women's Fragrances</h3>
+            <h3 className="text-xl font-semibold text-pink-800 mb-2">{t('gender.women')}</h3>
             <p className="text-pink-600">
-              Explore feminine scents with floral, fruity, and sweet notes
+              {t('gender.womenDesc')}
             </p>
           </div>
         </motion.div>
@@ -102,9 +104,9 @@ const GenderSelectionScreen = () => {
             <span className="text-6xl">⚭</span>
           </div>
           <div className="p-6 text-center">
-            <h3 className="text-xl font-semibold text-purple-800 mb-2">Unisex Fragrances</h3>
+            <h3 className="text-xl font-semibold text-purple-800 mb-2">{t('gender.unisex')}</h3>
             <p className="text-purple-600">
-              Find versatile scents that transcend traditional gender boundaries
+              {t('gender.unisexDesc')}
             </p>
           </div>
         </motion.div>
@@ -116,7 +118,7 @@ const GenderSelectionScreen = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="bg-white rounded-xl shadow-lg p-6 max-w-2xl w-full mb-8"
       >
-        <h3 className="text-xl font-semibold mb-4 text-gray-800">Price Range</h3>
+        <h3 className="text-xl font-semibold mb-4 text-gray-800">{t('gender.priceRange')}</h3>
         <div className="mb-6">
           <div className="flex justify-between mb-2">
             <span className="text-gray-600">${localPriceRange[0]}</span>
@@ -124,7 +126,7 @@ const GenderSelectionScreen = () => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700 mb-1">Minimum Price</label>
+              <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700 mb-1">{t('gender.minPrice')}</label>
               <input
                 type="range"
                 id="minPrice"
@@ -138,7 +140,7 @@ const GenderSelectionScreen = () => {
               />
             </div>
             <div>
-              <label htmlFor="maxPrice" className="block text-sm font-medium text-gray-700 mb-1">Maximum Price</label>
+              <label htmlFor="maxPrice" className="block text-sm font-medium text-gray-700 mb-1">{t('gender.maxPrice')}</label>
               <input
                 type="range"
                 id="maxPrice"
@@ -163,7 +165,7 @@ const GenderSelectionScreen = () => {
         disabled={!selectedGender}
         className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all ${!selectedGender ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'}`}
       >
-        Get My Recommendations
+        {t('gender.getRecommendations')}
       </motion.button>
     </div>
   );

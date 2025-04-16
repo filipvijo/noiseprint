@@ -449,17 +449,29 @@ export const generateScentProfileDescription = async (scentProfile) => {
   console.log('Generating description for profile:', scentProfile);
 
   try {
+    // Get current language from i18next
+    const currentLanguage = localStorage.getItem('i18nextLng') || 'en';
+    console.log('Current language:', currentLanguage);
+
     // Find the dominant scent families
     const sortedFamilies = Object.entries(scentProfile)
       .sort(([, valueA], [, valueB]) => valueB - valueA)
       .map(([family, value]) => ({ family, percentage: Math.round(value * 100) }));
 
-    // Create a prompt for OpenAI
+    // Create a prompt for OpenAI based on the current language
+    let languageInstruction = '';
+
+    if (currentLanguage === 'fr') {
+      languageInstruction = 'Write the response in French.';
+    } else if (currentLanguage === 'sr') {
+      languageInstruction = 'Write the response in Serbian using Cyrillic script.';
+    }
+
     const prompt = `Generate a sophisticated, 150-word description of a person's scent preferences based on their profile:
 
 ${sortedFamilies.map(f => `- ${f.family}: ${f.percentage}%`).join('\n')}
 
-The description should be elegant, insightful, and reveal personality traits based on these scent preferences. Use a luxurious, fashion-forward tone.`;
+The description should be elegant, insightful, and reveal personality traits based on these scent preferences. Use a luxurious, fashion-forward tone. ${languageInstruction}`;
 
     // If OpenAI API key is not set, use mock data
     if (!OPENAI_API_KEY) {
@@ -488,20 +500,45 @@ The description should be elegant, insightful, and reveal personality traits bas
 
 // Fallback function for mock descriptions
 const generateMockDescription = (scentProfile) => {
+  // Get current language
+  const currentLanguage = localStorage.getItem('i18nextLng') || 'en';
+
   // Find the dominant scent families (top 2)
   const sortedFamilies = Object.entries(scentProfile)
     .sort(([, valueA], [, valueB]) => valueB - valueA)
     .slice(0, 2)
     .map(([family]) => family);
 
-  // Return a mock description based on the dominant families
+  // Return a mock description based on the dominant families and language
   const descriptions = {
-    [ScentFamily.Citrus]: "You're drawn to bright, zesty scents that evoke sunshine and energy. Citrus notes like bergamot, lemon, and grapefruit speak to your vibrant personality and love of freshness.",
-    [ScentFamily.Floral]: "Your scent profile reveals a romantic soul with an appreciation for classic beauty. Floral notes like rose and jasmine reflect your elegant taste and emotional depth.",
-    [ScentFamily.Woody]: "The earthy, grounding qualities of woody scents resonate with your stable and reliable nature. Notes like sandalwood and cedarwood suggest a person who values tradition and authenticity.",
-    [ScentFamily.Oriental]: "Rich, exotic scents appeal to your sensual side. Your preference for oriental notes like amber, vanilla, and musk indicates a passionate personality with a taste for luxury.",
-    [ScentFamily.Fresh]: "Your affinity for fresh, clean scents suggests a person who values clarity and simplicity. Notes like sea salt and lavender point to a calm, balanced approach to life.",
+    en: {
+      [ScentFamily.Citrus]: "You're drawn to bright, zesty scents that evoke sunshine and energy. Citrus notes like bergamot, lemon, and grapefruit speak to your vibrant personality and love of freshness.",
+      [ScentFamily.Floral]: "Your scent profile reveals a romantic soul with an appreciation for classic beauty. Floral notes like rose and jasmine reflect your elegant taste and emotional depth.",
+      [ScentFamily.Woody]: "The earthy, grounding qualities of woody scents resonate with your stable and reliable nature. Notes like sandalwood and cedarwood suggest a person who values tradition and authenticity.",
+      [ScentFamily.Oriental]: "Rich, exotic scents appeal to your sensual side. Your preference for oriental notes like amber, vanilla, and musk indicates a passionate personality with a taste for luxury.",
+      [ScentFamily.Fresh]: "Your affinity for fresh, clean scents suggests a person who values clarity and simplicity. Notes like sea salt and lavender point to a calm, balanced approach to life.",
+      conclusion: "Your unique scent profile combines these elements into a signature fragrance personality that's sophisticated and multifaceted."
+    },
+    fr: {
+      [ScentFamily.Citrus]: "Vous êtes attiré par des parfums vifs et zestés qui évoquent le soleil et l'énergie. Les notes d'agrumes comme la bergamote, le citron et le pamplemousse reflètent votre personnalité vibrante et votre amour de la fraîcheur.",
+      [ScentFamily.Floral]: "Votre profil olfactif révèle une âme romantique avec une appréciation pour la beauté classique. Les notes florales comme la rose et le jasmin reflètent votre goût élégant et votre profondeur émotionnelle.",
+      [ScentFamily.Woody]: "Les qualités terreuses et ancrées des parfums boisés résonnent avec votre nature stable et fiable. Des notes comme le bois de santal et le cèdre suggèrent une personne qui valorise la tradition et l'authenticité.",
+      [ScentFamily.Oriental]: "Les parfums riches et exotiques séduisent votre côté sensuel. Votre préférence pour les notes orientales comme l'ambre, la vanille et le musc indique une personnalité passionnée avec un goût pour le luxe.",
+      [ScentFamily.Fresh]: "Votre affinité pour les parfums frais et propres suggère une personne qui valorise la clarté et la simplicité. Des notes comme le sel marin et la lavande indiquent une approche calme et équilibrée de la vie.",
+      conclusion: "Votre profil olfactif unique combine ces éléments en une personnalité de parfum signature sophistiquée et aux multiples facettes."
+    },
+    sr: {
+      [ScentFamily.Citrus]: "Привлаче вас светли, живахни мириси који подсећају на сунце и енергију. Цитрусне ноте попут бергамота, лимуна и грејпфрута одражавају вашу живахну личност и љубав према свежини.",
+      [ScentFamily.Floral]: "Ваш мирисни профил открива романтичну душу са осећајем за класичну лепоту. Цветне ноте попут руже и јасмина одражавају ваш елегантан укус и емоционалну дубину.",
+      [ScentFamily.Woody]: "Земљане, приземне квалитете дрвенастих мириса резонирају са вашом стабилном и поузданом природом. Ноте попут сандаловине и кедра указују на особу која цени традицију и аутентичност.",
+      [ScentFamily.Oriental]: "Богати, егзотични мириси привлаче вашу чулну страну. Ваша склоност ка оријенталним нотама попут амбера, ваниле и мошуса указује на страствену личност са укусом за луксуз.",
+      [ScentFamily.Fresh]: "Ваша наклоност према свежим, чистим мирисима указује на особу која цени јасноћу и једноставност. Ноте попут морске соли и лаванде указују на смирен, уравнотежен приступ животу.",
+      conclusion: "Ваш јединствени мирисни профил комбинује ове елементе у софистицирану и вишеслојну мирисну личност."
+    }
   };
 
-  return `${descriptions[sortedFamilies[0]]} ${descriptions[sortedFamilies[1]]} Your unique scent profile combines these elements into a signature fragrance personality that's sophisticated and multifaceted.`;
+  // Use the appropriate language or default to English
+  const langDescriptions = descriptions[currentLanguage] || descriptions.en;
+
+  return `${langDescriptions[sortedFamilies[0]]} ${langDescriptions[sortedFamilies[1]]} ${langDescriptions.conclusion}`;
 };

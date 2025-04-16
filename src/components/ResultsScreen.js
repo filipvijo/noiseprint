@@ -2,6 +2,9 @@ import { useScentContext } from '../context/ScentContext';
 import { ScentFamily } from '../data/scents';
 import { motion } from 'framer-motion';
 import { Radar } from 'react-chartjs-2';
+import { useTranslation } from 'react-i18next';
+import ColorPaletteRecommendation from './ColorPaletteRecommendation';
+import CelebrityScents from './CelebrityScents';
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -23,6 +26,7 @@ ChartJS.register(
 );
 
 const ResultsScreen = () => {
+  const { t } = useTranslation();
   const {
     scentProfile,
     profileDescription,
@@ -39,7 +43,7 @@ const ResultsScreen = () => {
     labels: Object.keys(scentProfile),
     datasets: [
       {
-        label: 'Your Scent Profile',
+        label: t('results.title'),
         data: Object.values(scentProfile),
         backgroundColor: 'rgba(147, 51, 234, 0.2)',
         borderColor: 'rgba(147, 51, 234, 1)',
@@ -89,6 +93,11 @@ const ResultsScreen = () => {
     { family: '', value: 0 }
   ).family;
 
+  // Find secondary scent family
+  const secondaryFamily = Object.entries(scentProfile)
+    .filter(([family]) => family !== dominantFamily)
+    .sort(([, valueA], [, valueB]) => valueB - valueA)[0]?.[0];
+
   return (
     <div className="flex flex-col items-center max-w-4xl mx-auto px-4 py-8">
       <motion.div
@@ -98,9 +107,9 @@ const ResultsScreen = () => {
         className="text-center mb-8 w-full"
       >
         <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-6 px-4 rounded-xl shadow-lg mb-8">
-          <h1 className="text-3xl font-bold mb-2">Your Scent Profile</h1>
+          <h1 className="text-3xl font-bold mb-2">{t('results.title')}</h1>
           <p className="text-white/80">
-            Based on your preferences, we've created your unique scent profile
+            {t('results.subtitle')}
           </p>
         </div>
       </motion.div>
@@ -112,13 +121,13 @@ const ResultsScreen = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg p-6 border border-purple-100"
         >
-          <h2 className="text-xl font-semibold mb-4 text-purple-800">Scent Radar</h2>
+          <h2 className="text-xl font-semibold mb-4 text-purple-800">{t('results.radar')}</h2>
           <div className="w-full h-64">
             <Radar data={radarData} options={radarOptions} />
           </div>
           <div className="mt-4 bg-white p-3 rounded-lg shadow-sm">
             <p className="text-sm text-gray-600">
-              Your dominant scent family: <span className="font-semibold text-purple-700">{dominantFamily}</span>
+              {t('results.dominantFamily')} <span className="font-semibold text-purple-700">{t(`families.${dominantFamily}`)}</span>
             </p>
           </div>
         </motion.div>
@@ -129,7 +138,7 @@ const ResultsScreen = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl shadow-lg p-6 border border-pink-100"
         >
-          <h2 className="text-xl font-semibold mb-4 text-pink-800">Your Scent Story</h2>
+          <h2 className="text-xl font-semibold mb-4 text-pink-800">{t('results.story')}</h2>
           <div className="prose bg-white p-4 rounded-lg shadow-sm">
             <p className="text-gray-700 leading-relaxed">
               {profileDescription}
@@ -138,14 +147,20 @@ const ResultsScreen = () => {
         </motion.div>
       </div>
 
+      {/* Color Palette Recommendations */}
+      <ColorPaletteRecommendation dominantFamily={dominantFamily} />
+
+      {/* Celebrity Scent Twins */}
+      <CelebrityScents dominantFamily={dominantFamily} secondaryFamily={secondaryFamily} />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
         className="mt-12 w-full"
       >
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-6 rounded-xl shadow-lg mb-6">
-          <h2 className="text-2xl font-bold text-center">Recommended Perfumes</h2>
+          <h2 className="text-2xl font-bold text-center">{t('results.recommendations')}</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {recommendations.map((perfume) => (
@@ -170,7 +185,7 @@ const ResultsScreen = () => {
                     rel="noopener noreferrer"
                     className="text-sm bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full hover:shadow-md transition-all"
                   >
-                    Shop Now
+                    {t('results.shopNow')}
                   </a>
                 </div>
               </div>
@@ -182,11 +197,11 @@ const ResultsScreen = () => {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
         onClick={resetApp}
         className="mt-12 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
       >
-        Start Over
+        {t('results.startOver')}
       </motion.button>
     </div>
   );

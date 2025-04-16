@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useScentContext } from '../context/ScentContext';
 
 const AnalyzingScreen = () => {
+  const { t } = useTranslation();
   const { isLoading, error } = useScentContext();
 
   // Animation variants for the loading dots
@@ -15,7 +17,7 @@ const AnalyzingScreen = () => {
 
   const dotVariants = {
     initial: { y: 0 },
-    animate: { 
+    animate: {
       y: [0, -15, 0],
       transition: {
         duration: 1,
@@ -33,15 +35,15 @@ const AnalyzingScreen = () => {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h2 className="text-3xl font-bold mb-6">Analyzing Your Scent Profile</h2>
-        
+        <h2 className="text-3xl font-bold mb-6">{t('analyzing.title')}</h2>
+
         {isLoading ? (
           <>
             <p className="text-gray-600 mb-8">
-              We're analyzing your preferences to create your unique scent profile...
+              {t('analyzing.subtitle')}
             </p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex justify-center space-x-3 my-8"
               variants={containerVariants}
               initial="initial"
@@ -55,7 +57,7 @@ const AnalyzingScreen = () => {
                 />
               ))}
             </motion.div>
-            
+
             <div className="max-w-md mx-auto">
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center">
@@ -66,14 +68,14 @@ const AnalyzingScreen = () => {
                   </div>
                   <span className="text-gray-700">Calculating scent preferences</span>
                 </div>
-                
+
                 <div className="flex items-center">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 animate-pulse">
                     <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
                   </div>
                   <span className="text-gray-700">Finding perfume matches</span>
                 </div>
-                
+
                 <div className="flex items-center">
                   <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
                     <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
@@ -86,7 +88,7 @@ const AnalyzingScreen = () => {
         ) : error ? (
           <div className="text-red-500 mt-4">
             <p>{error}</p>
-            <button 
+            <button
               className="mt-4 bg-red-500 text-white px-6 py-2 rounded-full"
               onClick={() => window.location.reload()}
             >
