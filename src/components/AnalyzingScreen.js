@@ -28,23 +28,31 @@ const AnalyzingScreen = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="flex flex-col items-center justify-center h-full relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 opacity-50">
+        <img
+          src="/images/analyzing_background.png"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center"
+        className="text-center relative z-10"
       >
-        <h2 className="text-3xl font-bold mb-6">{t('analyzing.title')}</h2>
+        <h2 className="text-3xl font-bold mb-6 text-purple-800 drop-shadow-md">{t('analyzing.title')}</h2>
 
         {isLoading ? (
           <>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-700 mb-8 bg-white/70 px-6 py-3 rounded-lg shadow-sm inline-block">
               {t('analyzing.subtitle')}
             </p>
 
             <motion.div
-              className="flex justify-center space-x-3 my-8"
+              className="flex justify-center space-x-3 my-8 bg-white/50 p-4 rounded-full shadow-sm"
               variants={containerVariants}
               initial="initial"
               animate="animate"
@@ -52,13 +60,13 @@ const AnalyzingScreen = () => {
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
-                  className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                  className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-sm"
                   variants={dotVariants}
                 />
               ))}
             </motion.div>
 
-            <div className="max-w-md mx-auto">
+            <div className="max-w-md mx-auto bg-white/80 p-6 rounded-xl shadow-md">
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
@@ -86,7 +94,7 @@ const AnalyzingScreen = () => {
             </div>
           </>
         ) : error ? (
-          <div className="text-red-500 mt-4">
+          <div className="bg-white/80 p-6 rounded-xl shadow-md text-red-500 mt-4">
             <p>{error}</p>
             <button
               className="mt-4 bg-red-500 text-white px-6 py-2 rounded-full"
