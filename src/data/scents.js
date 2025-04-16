@@ -1,11 +1,3 @@
-export const ScentFamily = {
-  Citrus: "Citrus",
-  Floral: "Floral",
-  Woody: "Woody",
-  Oriental: "Oriental",
-  Fresh: "Fresh",
-};
-
 // Import all images directly
 import amberImg from '../assets/images/amber.png';
 import bergamotImg from '../assets/images/bergamot.png';
@@ -21,6 +13,14 @@ import sandalwoodImg from '../assets/images/sandalwood.png';
 import seasaltImg from '../assets/images/seasalt.png';
 import vanillaImg from '../assets/images/vanilla.png';
 import vetiverImg from '../assets/images/vetiver.png';
+
+export const ScentFamily = {
+  Citrus: "Citrus",
+  Floral: "Floral",
+  Woody: "Woody",
+  Oriental: "Oriental",
+  Fresh: "Fresh",
+};
 
 // Map of image names to imported images
 const imageMap = {
