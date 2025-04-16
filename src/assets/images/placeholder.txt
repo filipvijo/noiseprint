@@ -1,0 +1,17 @@
+This directory will contain the following scent images:
+- amber.jpg
+- bergamot.jpg
+- cedarwood.jpg
+- grapefruit.jpg
+- jasmine.jpg
+- lavender.jpg
+- lemon.jpg
+- musk.jpg
+- patchouli.jpg
+- rose.jpg
+- sandalwood.jpg
+- seasalt.jpg
+- vanilla.jpg
+- vetiver.jpg
+
+Please add these images to this directory.
