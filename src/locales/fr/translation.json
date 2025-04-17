@@ -48,6 +48,64 @@
     "Oriental": "Oriental",
     "Fresh": "Frais"
   },
+  "scents": {
+    "amber": {
+      "name": "Ambre",
+      "description": "Chaud, riche et légèrement sucré avec une touche de vanille et de poudre."
+    },
+    "bergamot": {
+      "name": "Bergamote",
+      "description": "Agrumes vifs et zestés avec une subtile note florale."
+    },
+    "cedarwood": {
+      "name": "Bois de Cèdre",
+      "description": "Sec, boisé et légèrement sucré avec une touche de crayon taillé."
+    },
+    "grapefruit": {
+      "name": "Pamplemousse",
+      "description": "Agrumes acidulés et doux-amers avec un piquant rafraîchissant."
+    },
+    "jasmine": {
+      "name": "Jasmin",
+      "description": "Riche, sucré et intensément floral avec une touche de fruit."
+    },
+    "lavender": {
+      "name": "Lavande",
+      "description": "Herbal, floral et légèrement sucré avec un arôme propre et apaisant."
+    },
+    "lemon": {
+      "name": "Citron",
+      "description": "Agrumes vifs et nets avec une qualité propre et rafraîchissante."
+    },
+    "musk": {
+      "name": "Musc",
+      "description": "Chaud, sensuel et légèrement animalique avec une douceur poudrée."
+    },
+    "patchouli": {
+      "name": "Patchouli",
+      "description": "Terreux, boisé et légèrement sucré avec une touche d'épice."
+    },
+    "rose": {
+      "name": "Rose",
+      "description": "Riche, sucré et profondément floral avec une touche de miel."
+    },
+    "sandalwood": {
+      "name": "Bois de Santal",
+      "description": "Crémeux, boisé et légèrement sucré avec une douceur laiteuse."
+    },
+    "seasalt": {
+      "name": "Sel Marin",
+      "description": "Propre, ozonique et minéral avec une touche d'air frais."
+    },
+    "vanilla": {
+      "name": "Vanille",
+      "description": "Sucré, chaud et réconfortant avec une touche de pâtisserie."
+    },
+    "vetiver": {
+      "name": "Vétiver",
+      "description": "Terreux, boisé et légèrement fumé avec une touche d'agrumes."
+    }
+  },
   "language": {
     "en": "Anglais",
     "fr": "Français",

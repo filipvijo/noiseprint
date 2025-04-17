@@ -48,6 +48,64 @@
     "Oriental": "Oriental",
     "Fresh": "Fresh"
   },
+  "scents": {
+    "amber": {
+      "name": "Amber",
+      "description": "Warm, rich, and slightly sweet with a hint of vanilla and powder."
+    },
+    "bergamot": {
+      "name": "Bergamot",
+      "description": "Bright, zesty citrus with a subtle floral undertone."
+    },
+    "cedarwood": {
+      "name": "Cedarwood",
+      "description": "Dry, woody, and slightly sweet with a hint of pencil shavings."
+    },
+    "grapefruit": {
+      "name": "Grapefruit",
+      "description": "Tangy, bitter-sweet citrus with a refreshing zing."
+    },
+    "jasmine": {
+      "name": "Jasmine",
+      "description": "Rich, sweet, and intensely floral with a hint of fruit."
+    },
+    "lavender": {
+      "name": "Lavender",
+      "description": "Herbal, floral, and slightly sweet with a clean, calming aroma."
+    },
+    "lemon": {
+      "name": "Lemon",
+      "description": "Bright, sharp citrus with a clean, refreshing quality."
+    },
+    "musk": {
+      "name": "Musk",
+      "description": "Warm, sensual, and slightly animalic with a powdery softness."
+    },
+    "patchouli": {
+      "name": "Patchouli",
+      "description": "Earthy, woody, and slightly sweet with a hint of spice."
+    },
+    "rose": {
+      "name": "Rose",
+      "description": "Rich, sweet, and deeply floral with a hint of honey."
+    },
+    "sandalwood": {
+      "name": "Sandalwood",
+      "description": "Creamy, woody, and slightly sweet with a milky softness."
+    },
+    "seasalt": {
+      "name": "Sea Salt",
+      "description": "Clean, ozonic, and mineral with a hint of fresh air."
+    },
+    "vanilla": {
+      "name": "Vanilla",
+      "description": "Sweet, warm, and comforting with a hint of bakery goods."
+    },
+    "vetiver": {
+      "name": "Vetiver",
+      "description": "Earthy, woody, and slightly smoky with a hint of citrus."
+    }
+  },
   "language": {
     "en": "English",
     "fr": "French",

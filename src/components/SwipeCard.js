@@ -51,8 +51,8 @@ const SwipeCard = ({ scent, onSwipe }) => {
         transition={{ duration: 0.3 }}
       >
         <div className="absolute bottom-24 w-full p-5 bg-gradient-to-t from-black/80 to-transparent rounded-2xl text-white text-center mx-auto max-w-[90%] left-0 right-0">
-          <h2 className="text-2xl font-bold mb-1">{scent.name}</h2>
-          <p className="text-sm opacity-90">{scent.description}</p>
+          <h2 className="text-2xl font-bold mb-1">{t(`scents.${scent.id}.name`)}</h2>
+          <p className="text-sm opacity-90">{t(`scents.${scent.id}.description`)}</p>
           <div className="mt-3 text-xs opacity-70 flex justify-center">
             <span className="bg-white/20 px-2 py-1 rounded-full">
               {t(`families.${scent.family}`)}
