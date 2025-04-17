@@ -104,6 +104,186 @@
     "vetiver": {
       "name": "Vétiver",
       "description": "Terreux, boisé et légèrement fumé avec une touche d'agrumes."
+    },
+    "lime": {
+      "name": "Citron Vert",
+      "description": "Agrumes vibrants et acidulés avec un caractère vif et revigorant."
+    },
+    "mandarin": {
+      "name": "Mandarine",
+      "description": "Agrumes doux et juteux avec une chaleur miellée et une légère acidité."
+    },
+    "lillyofthevalley": {
+      "name": "Muguet",
+      "description": "Floral délicat, vert et doucement sucré avec une fraîcheur rosée."
+    },
+    "tuberose": {
+      "name": "Tubéreuse",
+      "description": "Floral sucré intense et crémeux avec une qualité enivrante et narcotique."
+    },
+    "orangeblossom": {
+      "name": "Fleur d'Oranger",
+      "description": "Floral lumineux et miellé avec une délicate note d'agrumes."
+    },
+    "peony": {
+      "name": "Pivoine",
+      "description": "Floral frais et aérien avec un caractère légèrement sucré et rosé."
+    },
+    "gardenia": {
+      "name": "Gardénia",
+      "description": "Floral blanc crémeux et opulent avec une douceur tropicale."
+    },
+    "violet": {
+      "name": "Violette",
+      "description": "Floral délicat et poudré avec un caractère légèrement sucré et vert."
+    },
+    "ylangylang": {
+      "name": "Ylang-Ylang",
+      "description": "Floral exotique et sucré avec une richesse crémeuse rappelant la banane."
+    },
+    "oud": {
+      "name": "Oud",
+      "description": "Note boisée riche et complexe avec des facettes animaliques, balsamiques et fumées."
+    },
+    "oakmoss": {
+      "name": "Mousse de Chêne",
+      "description": "Terreux, vert et légèrement moisi avec un caractère forestier."
+    },
+    "tonkabean": {
+      "name": "Fève Tonka",
+      "description": "Doux, chaud et amandé avec des notes de vanille et de tabac."
+    },
+    "cinnamon": {
+      "name": "Cannelle",
+      "description": "Épicé chaud et sucré avec une qualité réconfortante et familière."
+    },
+    "cardamom": {
+      "name": "Cardamome",
+      "description": "Épicé chaud et aromatique avec une note d'agrumes lumineuse."
+    },
+    "clove": {
+      "name": "Clou de Girofle",
+      "description": "Épice intense et chaude avec un caractère sucré et légèrement médicinal."
+    },
+    "nutmeg": {
+      "name": "Muscade",
+      "description": "Chaud, épicé et légèrement sucré avec une qualité boisée et terreuse."
+    },
+    "frankincense": {
+      "name": "Encens",
+      "description": "Résineux, boisé et légèrement citronné avec une qualité spirituelle et méditative."
+    },
+    "myrrh": {
+      "name": "Myrrhe",
+      "description": "Résine balsamique chaude avec un caractère légèrement médicinal et terreux."
+    },
+    "benzoin": {
+      "name": "Benjoin",
+      "description": "Résine douce et balsamique avec une chaleur vanillée et une touche de cannelle."
+    },
+    "labdanum": {
+      "name": "Labdanum",
+      "description": "Résine riche et ambrée avec des facettes cuirées, animaliques et miellées."
+    },
+    "ambergris": {
+      "name": "Ambre Gris",
+      "description": "Marin, doux et animalique avec un caractère unique salé-sucré."
+    },
+    "mint": {
+      "name": "Menthe",
+      "description": "Fraîs, rafraîchissant et revigorant avec une qualité propre et aromatique."
+    },
+    "greentea": {
+      "name": "Thé Vert",
+      "description": "Frais, légèrement amer et délicatement aromatique avec un caractère apaisant."
+    },
+    "galbanum": {
+      "name": "Galbanum",
+      "description": "Vert intense, vif et légèrement amer avec une qualité naturelle et terreuse."
+    },
+    "tomatoleaf": {
+      "name": "Feuille de Tomate",
+      "description": "Vert, vif et légèrement épicé avec un caractère distinctif de jardin frais."
+    },
+    "calone": {
+      "name": "Calone",
+      "description": "Frais, aquatique et ozonique avec un caractère distinctif de brise marine."
+    },
+    "ozonic": {
+      "name": "Ozonique",
+      "description": "Propre, aérien et électrique avec le parfum d'air frais après un orage."
+    },
+    "caramel": {
+      "name": "Caramel",
+      "description": "Doux, riche et beurré avec une chaleur de sucre cuit."
+    },
+    "chocolate": {
+      "name": "Chocolat",
+      "description": "Riche, doux et légèrement amer avec un caractère profond et réconfortant."
+    },
+    "coffee": {
+      "name": "Café",
+      "description": "Riche, torréfié et légèrement amer avec une qualité chaude et énergisante."
+    },
+    "praline": {
+      "name": "Praliné",
+      "description": "Doux, noisété et caramélisé avec un caractère gourmand riche."
+    },
+    "toffee": {
+      "name": "Caramel au Beurre",
+      "description": "Doux, beurré et caramélisé avec une qualité riche et crémeuse."
+    },
+    "almond": {
+      "name": "Amande",
+      "description": "Doux, noisété et légèrement cerise avec une chaleur réconfortante."
+    },
+    "coconut": {
+      "name": "Noix de Coco",
+      "description": "Crémeux, doux et tropical avec un caractère laiteux et légèrement boisé."
+    },
+    "apple": {
+      "name": "Pomme",
+      "description": "Croustillant, juteux et légèrement sucré avec une qualité fraîche de verger."
+    },
+    "pear": {
+      "name": "Poire",
+      "description": "Juteux, doux et légèrement floral avec un caractère délicat et frais."
+    },
+    "peach": {
+      "name": "Pêche",
+      "description": "Doux, juteux et légèrement duveteux avec un caractère chaud et estival."
+    },
+    "berries": {
+      "name": "Baies",
+      "description": "Doux, juteux et légèrement acidulé avec une qualité vibrante et confiture."
+    },
+    "plum": {
+      "name": "Prune",
+      "description": "Doux, juteux et légèrement vineux avec une profondeur fruitée riche."
+    },
+    "fig": {
+      "name": "Figue",
+      "description": "Doux, confiture et légèrement vert avec un caractère crémeux unique."
+    },
+    "blackpepper": {
+      "name": "Poivre Noir",
+      "description": "Vif, épicé et légèrement boisé avec une morsure aromatique sèche."
+    },
+    "pinkpepper": {
+      "name": "Poivre Rose",
+      "description": "Épicé, fruité et légèrement rosé avec un caractère vif et énergique."
+    },
+    "ginger": {
+      "name": "Gingembre",
+      "description": "Épicé, chaud et légèrement citronné avec une qualité fraîche et revigorante."
+    },
+    "talc": {
+      "name": "Talc",
+      "description": "Doux, propre et réconfortant avec une qualité nostalgique de poudre pour bébé."
+    },
+    "cacao": {
+      "name": "Cacao",
+      "description": "Riche, amer et terreux avec un caractère de chocolat brut non transformé."
     }
   },
   "language": {
