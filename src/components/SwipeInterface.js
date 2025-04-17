@@ -39,7 +39,13 @@ const SwipeInterface = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full">
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold mb-2">{t('app.title')}</h1>
+        <div className="w-48 h-48 mx-auto mb-4">
+          <img
+            src="/images/logo.png"
+            alt="NosePrint Logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
         <p className="text-gray-600">{t('app.subtitle')}</p>
       </div>
 

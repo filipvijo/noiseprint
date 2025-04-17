@@ -116,6 +116,7 @@ export const ScentProvider = ({ children }) => {
     <ScentContext.Provider
       value={{
         appState,
+        setAppState,
         likedScents,
         dislikedScents,
         currentScentIndex,

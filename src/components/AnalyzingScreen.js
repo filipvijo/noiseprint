@@ -11,7 +11,7 @@ const AnalyzingScreen = () => {
 
   // Show animation when analysis is complete
   useEffect(() => {
-    // When isLoading changes from true to false, it means analysis is complete
+    // Only show animation when isLoading transitions from true to false
     if (!isLoading && !error && !showAnimation) {
       console.log('Analysis complete, showing animation');
       // Analysis is complete, show the animation
