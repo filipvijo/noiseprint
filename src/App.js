@@ -7,6 +7,7 @@ import GenderSelectionScreen from './components/GenderSelectionScreen';
 import BackgroundVisual from './components/BackgroundVisual';
 import IntroAnimation from './components/IntroAnimation';
 import LanguageModal from './components/LanguageModal';
+import ImagePreloader from './components/ImagePreloader';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 
@@ -41,6 +42,9 @@ const AppContent = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
       <BackgroundVisual />
+
+      {/* Preload images */}
+      <ImagePreloader />
 
       {/* Intro Animation */}
       <IntroAnimation onComplete={handleIntroComplete} />

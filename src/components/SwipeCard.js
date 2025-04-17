@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const SwipeCard = ({ scent, onSwipe }) => {
   const { t } = useTranslation();
   const [exitX, setExitX] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload this specific image
+    const img = new Image();
+    img.src = scent.image;
+    img.onload = () => setImageLoaded(true);
+  }, [scent.image]);
 
   // Motion values for drag
   const x = useMotionValue(0);
@@ -44,12 +52,20 @@ const SwipeCard = ({ scent, onSwipe }) => {
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className="w-[300px] h-[400px] rounded-2xl bg-cover bg-center shadow-lg"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        className="w-[300px] h-[400px] rounded-2xl bg-cover bg-center shadow-lg overflow-hidden"
+        style={{
+          backgroundColor: '#f0f0f0',
+          backgroundImage: imageLoaded ? `url(${imageUrl})` : 'none'
+        }}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
+        {!imageLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+            <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        )}
         <div className="absolute bottom-24 w-full p-5 bg-gradient-to-t from-black/80 to-transparent rounded-2xl text-white text-center mx-auto max-w-[90%] left-0 right-0">
           <h2 className="text-2xl font-bold mb-1">{t(`scents.${scent.id}.name`)}</h2>
           <p className="text-sm opacity-90">{t(`scents.${scent.id}.description`)}</p>
