@@ -6,24 +6,35 @@ const IntroAnimation = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Check if intro has been shown before
-    const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+    // For testing purposes, always show the intro
+    // Remove the localStorage check to always see the animation
 
-    if (hasSeenIntro) {
-      // Skip intro if already seen
-      setIsVisible(false);
-      onComplete();
-      return;
+    // Set a listener for the video completion
+    const videoElement = document.querySelector('#intro-video');
+
+    if (videoElement) {
+      videoElement.addEventListener('ended', () => {
+        // When video ends, hide the intro
+        setIsVisible(false);
+        // localStorage.setItem('hasSeenIntro', 'true'); // Uncomment for production
+        onComplete();
+      });
+    } else {
+      // Fallback if video element isn't found
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+        // localStorage.setItem('hasSeenIntro', 'true'); // Uncomment for production
+        onComplete();
+      }, 6000); // Slightly longer than video duration
+
+      return () => clearTimeout(timer);
     }
 
-    // Set timeout to hide the intro after 4 seconds
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      localStorage.setItem('hasSeenIntro', 'true');
-      onComplete();
-    }, 4000);
-
-    return () => clearTimeout(timer);
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener('ended', () => {});
+      }
+    };
   }, [onComplete]);
 
   return (
@@ -49,6 +60,7 @@ const IntroAnimation = ({ onComplete }) => {
                   autoPlay={true}
                   loop={false}
                   className="w-full h-full object-contain"
+                  id="intro-video"
                 />
               </div>
             </motion.div>

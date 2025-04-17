@@ -11,10 +11,18 @@ const AnalyzingScreen = () => {
 
   // Simulate analysis completion after 5 seconds
   useEffect(() => {
-    if (!isLoading && !error) {
-      // Analysis is complete, show the animation
-      setShowAnimation(true);
+    let timer;
+    if (isLoading && !error) {
+      // Set a timer to simulate analysis completion
+      timer = setTimeout(() => {
+        // Analysis is complete, show the animation
+        setShowAnimation(true);
+      }, 5000); // 5 seconds
     }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, [isLoading, error]);
 
   // Animation variants for the loading dots

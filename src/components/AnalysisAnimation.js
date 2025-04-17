@@ -11,11 +11,12 @@ const AnalysisAnimation = ({ onComplete }) => {
       className="fixed inset-0 z-40 flex items-center justify-center bg-white bg-opacity-90"
     >
       <div className="max-w-md w-full">
-        <VideoPlayer 
+        <VideoPlayer
           src="/assets/videos/after_analyzing.webm"
           onComplete={onComplete}
           autoPlay={true}
           loop={false}
+          id="analysis-video"
         />
       </div>
     </motion.div>
