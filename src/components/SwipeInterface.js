@@ -37,19 +37,19 @@ const SwipeInterface = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
-      <div className="mb-8 text-center">
-        <div className="w-48 h-48 mx-auto mb-4">
+    <div className="flex flex-col items-center justify-start h-full pt-8"> {/* Changed to justify-start and added top padding */}
+      <div className="mb-4 text-center">
+        <div className="w-72 h-72 mx-auto mb-6">
           <img
             src="/images/logo.png"
             alt="NosePrint Logo"
             className="w-full h-full object-contain"
           />
         </div>
-        <p className="text-gray-600">{t('app.subtitle')}</p>
+        <p className="text-gray-600 mb-4">{t('app.subtitle')}</p>
       </div>
 
-      <div className="relative w-[300px] h-[400px] mb-8">
+      <div className="relative w-[340px] h-[450px] mb-8">
         {!isFinished ? (
           <SwipeCard
             key={currentScent.id}
