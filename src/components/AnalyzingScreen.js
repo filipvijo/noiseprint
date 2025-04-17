@@ -1,10 +1,21 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useScentContext } from '../context/ScentContext';
+import { useScentContext, AppState } from '../context/ScentContext';
+import AnalysisAnimation from './AnalysisAnimation';
 
 const AnalyzingScreen = () => {
   const { t } = useTranslation();
-  const { isLoading, error } = useScentContext();
+  const { isLoading, error, setAppState } = useScentContext();
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  // Simulate analysis completion after 5 seconds
+  useEffect(() => {
+    if (!isLoading && !error) {
+      // Analysis is complete, show the animation
+      setShowAnimation(true);
+    }
+  }, [isLoading, error]);
 
   // Animation variants for the loading dots
   const containerVariants = {
@@ -27,8 +38,19 @@ const AnalyzingScreen = () => {
     },
   };
 
+  // Handle animation completion
+  const handleAnimationComplete = () => {
+    // Move to results screen
+    setAppState(AppState.Results);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center h-full relative">
+      {/* Show analysis complete animation */}
+      {showAnimation && (
+        <AnalysisAnimation onComplete={handleAnimationComplete} />
+      )}
+
       {/* Background Image */}
       <div className="absolute inset-0 z-0 opacity-[0.09]">
         <img

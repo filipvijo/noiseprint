@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import VideoPlayer from './VideoPlayer';
 
 const IntroAnimation = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -7,21 +8,21 @@ const IntroAnimation = ({ onComplete }) => {
   useEffect(() => {
     // Check if intro has been shown before
     const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-    
+
     if (hasSeenIntro) {
       // Skip intro if already seen
       setIsVisible(false);
       onComplete();
       return;
     }
-    
+
     // Set timeout to hide the intro after 4 seconds
     const timer = setTimeout(() => {
       setIsVisible(false);
       localStorage.setItem('hasSeenIntro', 'true');
       onComplete();
     }, 4000);
-    
+
     return () => clearTimeout(timer);
   }, [onComplete]);
 
@@ -41,15 +42,17 @@ const IntroAnimation = ({ onComplete }) => {
               transition={{ duration: 0.8, type: 'spring', damping: 15 }}
               className="mb-4"
             >
-              {/* Placeholder for your After Effects animation */}
-              {/* This is where you would place your logo animation */}
-              <div className="w-48 h-48 mx-auto bg-white rounded-full flex items-center justify-center shadow-lg">
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
-                  NosePrint
-                </h1>
+              {/* After Effects animation */}
+              <div className="w-64 h-64 mx-auto">
+                <VideoPlayer
+                  src="/assets/videos/intro.webm"
+                  autoPlay={true}
+                  loop={false}
+                  className="w-full h-full object-contain"
+                />
               </div>
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +61,7 @@ const IntroAnimation = ({ onComplete }) => {
             >
               Discover Your Scent Profile
             </motion.p>
-            
+
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
