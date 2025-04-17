@@ -9,21 +9,15 @@ const AnalyzingScreen = () => {
   const { isLoading, error, setAppState } = useScentContext();
   const [showAnimation, setShowAnimation] = useState(false);
 
-  // Simulate analysis completion after 5 seconds
+  // Show animation when analysis is complete
   useEffect(() => {
-    let timer;
-    if (isLoading && !error) {
-      // Set a timer to simulate analysis completion
-      timer = setTimeout(() => {
-        // Analysis is complete, show the animation
-        setShowAnimation(true);
-      }, 5000); // 5 seconds
+    // When isLoading changes from true to false, it means analysis is complete
+    if (!isLoading && !error && !showAnimation) {
+      console.log('Analysis complete, showing animation');
+      // Analysis is complete, show the animation
+      setShowAnimation(true);
     }
-
-    return () => {
-      if (timer) clearTimeout(timer);
-    };
-  }, [isLoading, error]);
+  }, [isLoading, error, showAnimation]);
 
   // Animation variants for the loading dots
   const containerVariants = {

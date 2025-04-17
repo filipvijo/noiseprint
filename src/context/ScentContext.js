@@ -88,7 +88,9 @@ export const ScentProvider = ({ children }) => {
       const description = await generateScentProfileDescription(scentProfile);
       setProfileDescription(description);
 
-      setAppState(AppState.Results);
+      // Don't automatically transition to results
+      // The AnalyzingScreen will handle the transition after showing the animation
+      // setAppState(AppState.Results);
     } catch (err) {
       setError('An error occurred while analyzing your preferences. Please try again.');
       console.error(err);

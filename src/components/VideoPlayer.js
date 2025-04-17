@@ -8,23 +8,29 @@ const VideoPlayer = ({ src, onComplete, autoPlay = true, loop = false, className
 
     if (video) {
       // Handle video completion
-      if (onComplete) {
-        video.addEventListener('ended', onComplete);
-      }
+      const handleVideoEnd = () => {
+        console.log('Video ended event fired');
+        if (onComplete) {
+          onComplete();
+        }
+      };
+
+      // Add event listener
+      video.addEventListener('ended', handleVideoEnd);
 
       // Autoplay when component mounts
       if (autoPlay) {
+        console.log('Attempting to autoplay video');
         video.play().catch(error => {
           console.error('Error playing video:', error);
         });
       }
-    }
 
-    return () => {
-      if (video && onComplete) {
-        video.removeEventListener('ended', onComplete);
-      }
-    };
+      return () => {
+        // Clean up event listener
+        video.removeEventListener('ended', handleVideoEnd);
+      };
+    }
   }, [autoPlay, onComplete]);
 
   return (

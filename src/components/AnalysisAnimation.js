@@ -8,8 +8,10 @@ const AnalysisAnimation = ({ onComplete }) => {
   // Add extra delay after video ends
   useEffect(() => {
     if (videoEnded) {
+      console.log('Video ended, waiting 2 seconds before transitioning');
       // Wait 2 more seconds after video ends before transitioning
       const timer = setTimeout(() => {
+        console.log('Delay complete, transitioning to results');
         onComplete();
       }, 2000); // 2 second extra delay
 
@@ -19,6 +21,7 @@ const AnalysisAnimation = ({ onComplete }) => {
 
   // Handle video completion
   const handleVideoComplete = () => {
+    console.log('Video completion event triggered');
     setVideoEnded(true);
   };
 
