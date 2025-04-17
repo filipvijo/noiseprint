@@ -1,5 +1,5 @@
-// We'll use the public folder images instead of imports
-// This allows us to access all the new images
+// Import the image optimizer utility
+import { getOptimizedImagePath } from '../utils/imageOptimizer';
 
 export const ScentFamily = {
   Citrus: "Citrus",
@@ -9,8 +9,8 @@ export const ScentFamily = {
   Fresh: "Fresh",
 };
 
-// Function to get image path from public folder
-const imagePath = (name) => `/assets/images/${name.toLowerCase()}.png`;
+// Use the optimized image path function
+const imagePath = getOptimizedImagePath;
 
 export const scents = [
   // Citrus Family
