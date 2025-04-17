@@ -104,6 +104,186 @@
     "vetiver": {
       "name": "Vetiver",
       "description": "Earthy, woody, and slightly smoky with a hint of citrus."
+    },
+    "lime": {
+      "name": "Lime",
+      "description": "Vibrant, tangy citrus with a sharp, invigorating character."
+    },
+    "mandarin": {
+      "name": "Mandarin",
+      "description": "Sweet, juicy citrus with a honeyed warmth and gentle acidity."
+    },
+    "lillyofthevalley": {
+      "name": "Lily of the Valley",
+      "description": "Delicate, green, and sweetly floral with a dewy freshness."
+    },
+    "tuberose": {
+      "name": "Tuberose",
+      "description": "Intensely sweet, creamy floral with a heady, narcotic quality."
+    },
+    "orangeblossom": {
+      "name": "Orange Blossom",
+      "description": "Bright, honeyed floral with a delicate citrus undertone."
+    },
+    "peony": {
+      "name": "Peony",
+      "description": "Fresh, airy floral with a slightly sweet and rosy character."
+    },
+    "gardenia": {
+      "name": "Gardenia",
+      "description": "Creamy, opulent white floral with a tropical sweetness."
+    },
+    "violet": {
+      "name": "Violet",
+      "description": "Delicate, powdery floral with a slightly sweet and green character."
+    },
+    "ylangylang": {
+      "name": "Ylang Ylang",
+      "description": "Exotic, sweet floral with a creamy, banana-like richness."
+    },
+    "oud": {
+      "name": "Oud",
+      "description": "Rich, complex woody note with animalic, balsamic, and smoky facets."
+    },
+    "oakmoss": {
+      "name": "Oakmoss",
+      "description": "Earthy, green, and slightly musty with a forest-like character."
+    },
+    "tonkabean": {
+      "name": "Tonka Bean",
+      "description": "Sweet, warm, and almond-like with hints of vanilla and tobacco."
+    },
+    "cinnamon": {
+      "name": "Cinnamon",
+      "description": "Warm, spicy, and sweet with a comforting, familiar quality."
+    },
+    "cardamom": {
+      "name": "Cardamom",
+      "description": "Warm, spicy, and aromatic with a bright, citrusy undertone."
+    },
+    "clove": {
+      "name": "Clove",
+      "description": "Intense, warm spice with a sweet, slightly medicinal character."
+    },
+    "nutmeg": {
+      "name": "Nutmeg",
+      "description": "Warm, spicy, and slightly sweet with a woody, earthy quality."
+    },
+    "frankincense": {
+      "name": "Frankincense",
+      "description": "Resinous, woody, and slightly citrusy with a spiritual, meditative quality."
+    },
+    "myrrh": {
+      "name": "Myrrh",
+      "description": "Warm, balsamic resin with a slightly medicinal, earthy character."
+    },
+    "benzoin": {
+      "name": "Benzoin",
+      "description": "Sweet, balsamic resin with vanilla-like warmth and a hint of cinnamon."
+    },
+    "labdanum": {
+      "name": "Labdanum",
+      "description": "Rich, ambery resin with leathery, animalic, and honeyed facets."
+    },
+    "ambergris": {
+      "name": "Ambergris",
+      "description": "Marine, sweet, and animalic with a unique salty-sweet character."
+    },
+    "mint": {
+      "name": "Mint",
+      "description": "Cool, refreshing, and invigorating with a clean, aromatic quality."
+    },
+    "greentea": {
+      "name": "Green Tea",
+      "description": "Fresh, slightly bitter, and delicately aromatic with a calming character."
+    },
+    "galbanum": {
+      "name": "Galbanum",
+      "description": "Intensely green, sharp, and slightly bitter with a natural, earthy quality."
+    },
+    "tomatoleaf": {
+      "name": "Tomato Leaf",
+      "description": "Green, sharp, and slightly spicy with a distinctive garden-fresh character."
+    },
+    "calone": {
+      "name": "Calone",
+      "description": "Fresh, aquatic, and ozonic with a distinctive sea breeze character."
+    },
+    "ozonic": {
+      "name": "Ozonic",
+      "description": "Clean, airy, and electric with the scent of fresh air after a thunderstorm."
+    },
+    "caramel": {
+      "name": "Caramel",
+      "description": "Sweet, rich, and buttery with a cooked sugar warmth."
+    },
+    "chocolate": {
+      "name": "Chocolate",
+      "description": "Rich, sweet, and slightly bitter with a deep, comforting character."
+    },
+    "coffee": {
+      "name": "Coffee",
+      "description": "Rich, roasted, and slightly bitter with a warm, energizing quality."
+    },
+    "praline": {
+      "name": "Praline",
+      "description": "Sweet, nutty, and caramelized with a rich, gourmand character."
+    },
+    "toffee": {
+      "name": "Toffee",
+      "description": "Sweet, buttery, and caramelized with a rich, creamy quality."
+    },
+    "almond": {
+      "name": "Almond",
+      "description": "Sweet, nutty, and slightly cherry-like with a comforting warmth."
+    },
+    "coconut": {
+      "name": "Coconut",
+      "description": "Creamy, sweet, and tropical with a milky, slightly woody character."
+    },
+    "apple": {
+      "name": "Apple",
+      "description": "Crisp, juicy, and slightly sweet with a fresh, orchard-like quality."
+    },
+    "pear": {
+      "name": "Pear",
+      "description": "Juicy, sweet, and slightly floral with a delicate, fresh character."
+    },
+    "peach": {
+      "name": "Peach",
+      "description": "Sweet, juicy, and slightly fuzzy with a warm, summery character."
+    },
+    "berries": {
+      "name": "Berries",
+      "description": "Sweet, juicy, and slightly tart with a vibrant, jammy quality."
+    },
+    "plum": {
+      "name": "Plum",
+      "description": "Sweet, juicy, and slightly wine-like with a rich, fruity depth."
+    },
+    "fig": {
+      "name": "Fig",
+      "description": "Sweet, jammy, and slightly green with a unique, creamy character."
+    },
+    "blackpepper": {
+      "name": "Black Pepper",
+      "description": "Sharp, spicy, and slightly woody with a dry, aromatic bite."
+    },
+    "pinkpepper": {
+      "name": "Pink Pepper",
+      "description": "Spicy, fruity, and slightly rosy with a bright, energetic character."
+    },
+    "ginger": {
+      "name": "Ginger",
+      "description": "Spicy, warm, and slightly citrusy with a fresh, invigorating quality."
+    },
+    "talc": {
+      "name": "Talc",
+      "description": "Soft, clean, and comforting with a nostalgic, baby-powder quality."
+    },
+    "cacao": {
+      "name": "Cacao",
+      "description": "Rich, bitter, and earthy with a raw, unprocessed chocolate character."
     }
   },
   "language": {
