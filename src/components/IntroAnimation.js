@@ -44,42 +44,27 @@ const IntroAnimation = ({ onComplete }) => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-purple-900 to-indigo-900"
+          className="fixed inset-0 z-50 bg-black"
         >
-          <div className="text-center">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, type: 'spring', damping: 15 }}
-              className="mb-4"
-            >
-              {/* After Effects animation */}
-              <div className="w-64 h-64 mx-auto">
-                <VideoPlayer
-                  src="/assets/videos/intro.webm"
-                  autoPlay={true}
-                  loop={false}
-                  className="w-full h-full object-contain"
-                  id="intro-video"
-                />
-              </div>
-            </motion.div>
+          {/* After Effects animation - Full Screen */}
+          <VideoPlayer
+            src="/assets/videos/intro.webm"
+            autoPlay={true}
+            loop={false}
+            className="w-full h-full object-contain"
+            id="intro-video"
+          />
 
+          {/* Optional overlay text - can be removed if not needed */}
+          <div className="absolute bottom-10 left-0 right-0 text-center">
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-white text-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="text-white text-xl font-light"
             >
               Discover Your Scent Profile
             </motion.p>
-
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: '100%' }}
-              transition={{ delay: 0.8, duration: 3 }}
-              className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mt-8 rounded-full max-w-xs mx-auto"
-            />
           </div>
         </motion.div>
       )}
