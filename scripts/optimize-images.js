@@ -22,20 +22,20 @@ async function processImages() {
   for (const file of imageFiles) {
     const sourcePath = path.join(sourceDir, file);
     const targetPath = path.join(targetDir, file.replace('.png', '.webp'));
-    
+
     try {
-      // Convert to WebP with quality 80 (good balance between quality and size)
+      // Convert to WebP with higher resolution but still good compression
       await sharp(sourcePath)
-        .resize(300, 400, { fit: 'cover' }) // Resize to standard card size
-        .webp({ quality: 80 })
+        .resize(450, 600, { fit: 'cover' }) // Higher resolution for card images
+        .webp({ quality: 85, effort: 6 }) // Slightly higher quality, good compression effort
         .toFile(targetPath);
-      
+
       console.log(`Optimized: ${file} -> ${path.basename(targetPath)}`);
     } catch (error) {
       console.error(`Error processing ${file}:`, error);
     }
   }
-  
+
   console.log('Image optimization complete!');
 }
 

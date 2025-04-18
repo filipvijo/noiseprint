@@ -39,8 +39,11 @@ const AppContent = () => {
     localStorage.removeItem('showLanguageModal');
   };
 
+  // Determine vertical alignment based on app state
+  const verticalAlignment = appState === AppState.Analyzing ? 'items-center' : 'items-start';
+
   return (
-    <div className="min-h-screen flex items-start justify-center pt-1 px-4 relative">
+    <div className={`min-h-screen flex ${verticalAlignment} justify-center pt-1 px-4 relative`}>
       <BackgroundVisual />
 
       {/* Preload images */}

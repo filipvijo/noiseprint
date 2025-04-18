@@ -10,12 +10,12 @@ export const preloadImage = (src) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.src = src;
-    
+
     img.onload = () => {
       imageCache.set(src, img);
       resolve(img);
     };
-    
+
     img.onerror = () => {
       reject(new Error(`Failed to load image: ${src}`));
     };
@@ -31,17 +31,17 @@ export const preloadImages = (sources) => {
 export const getOptimizedImagePath = (name) => {
   // Check if we're in production
   const isProduction = process.env.NODE_ENV === 'production';
-  
+
   // In production, use WebP format if available
   if (isProduction) {
     return `/assets/images/optimized/${name.toLowerCase()}.webp`;
   }
-  
+
   // In development, use regular PNG
   return `/assets/images/${name.toLowerCase()}.png`;
 };
 
 // Function to get a placeholder for a failed image
 export const getPlaceholder = (name) => {
-  return `https://via.placeholder.com/300x400?text=${name}`;
+  return `https://via.placeholder.com/450x600?text=${name}`;
 };

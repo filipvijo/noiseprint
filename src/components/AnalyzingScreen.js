@@ -41,7 +41,7 @@ const AnalyzingScreen = () => {
 
 
   return (
-    <div className="flex flex-col items-center justify-center h-full relative">
+    <div className="flex flex-col items-center justify-center h-full relative my-auto">
       {/* Animation removed */}
 
       {/* Background Image */}
