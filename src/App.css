@@ -3,8 +3,8 @@
 /* Swipe card styles */
 .swipe-card {
   position: absolute;
-  width: 400px;
-  height: 530px;
+  width: 360px;
+  height: 480px;
   border-radius: 20px;
   background-size: cover;
   background-position: center;

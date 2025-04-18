@@ -39,7 +39,7 @@ const BackgroundVisual = () => {
     } else if (appState === 'genderSelection') {
       setBackground('bg-gradient-to-br from-purple-50 to-pink-100');
     } else if (appState === 'swiping') {
-      setBackground('bg-[#FBCEB1]'); // Peach background for swiping interface
+      setBackground('bg-gradient-to-br from-purple-50 to-pink-100'); // Gradient background for swiping interface
     } else {
       setBackground('bg-gradient-to-br from-gray-50 to-gray-100');
     }
