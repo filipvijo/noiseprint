@@ -36,20 +36,14 @@ const SwipeInterface = () => {
     }
   };
 
+  // Added peach background and larger cards
   return (
-    <div className="flex flex-col items-center justify-start h-full pt-8"> {/* Changed to justify-start and added top padding */}
-      <div className="mb-4 text-center">
-        <div className="w-72 h-72 mx-auto mb-6">
-          <img
-            src="/images/logo.png"
-            alt="NosePrint Logo"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <p className="text-gray-600 mb-4">{t('app.subtitle')}</p>
+    <div className="flex flex-col items-center h-full bg-[#FBCEB1]">
+      <div className="text-center mt-8">
+        <p className="text-gray-700 mb-6 text-lg">{t('app.subtitle')}</p>
       </div>
 
-      <div className="relative w-[340px] h-[450px] mb-8">
+      <div className="relative w-[400px] h-[530px] mb-8">
         {!isFinished ? (
           <SwipeCard
             key={currentScent.id}
@@ -57,7 +51,7 @@ const SwipeInterface = () => {
             onSwipe={(direction) => handleSwipe(direction, currentScent)}
           />
         ) : (
-          <div className="flex flex-col items-center justify-center h-full bg-white rounded-2xl shadow-md p-8">
+          <div className="flex flex-col items-center justify-center h-full bg-[#FBCEB1] rounded-2xl shadow-md p-8 border-2 border-white">
             <p className="text-xl mb-4">{t('swipe.allSwiped')}</p>
             <button
               onClick={finishSwiping}

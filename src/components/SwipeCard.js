@@ -41,7 +41,7 @@ const SwipeCard = ({ scent, onSwipe }) => {
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className="w-[300px] h-[400px] rounded-2xl shadow-lg overflow-hidden"
+        className="w-[400px] h-[530px] rounded-2xl shadow-lg overflow-hidden"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -58,9 +58,9 @@ const SwipeCard = ({ scent, onSwipe }) => {
             }}
           />
         </div>
-        <div className="absolute bottom-24 w-full p-5 bg-gradient-to-t from-black/80 to-transparent rounded-2xl text-white text-center mx-auto max-w-[90%] left-0 right-0">
-          <h2 className="text-2xl font-bold mb-1">{t(`scents.${scent.id}.name`)}</h2>
-          <p className="text-sm opacity-90">{t(`scents.${scent.id}.description`)}</p>
+        <div className="absolute bottom-32 w-full p-6 bg-gradient-to-t from-black/80 to-transparent rounded-2xl text-white text-center mx-auto max-w-[90%] left-0 right-0">
+          <h2 className="text-3xl font-bold mb-2">{t(`scents.${scent.id}.name`)}</h2>
+          <p className="text-base opacity-90">{t(`scents.${scent.id}.description`)}</p>
           <div className="mt-3 text-xs opacity-70 flex justify-center">
             <span className="bg-white/20 px-2 py-1 rounded-full">
               {t(`families.${scent.family}`)}

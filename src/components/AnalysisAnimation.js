@@ -1,46 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import VideoPlayer from './VideoPlayer';
 
 const AnalysisAnimation = ({ onComplete }) => {
-  const [videoEnded, setVideoEnded] = useState(false);
-
-  // Add extra delay after video ends
+  // Simplified animation - just wait and then complete
   useEffect(() => {
-    if (videoEnded) {
-      console.log('Video ended, waiting 2 seconds before transitioning');
-      // Wait 2 more seconds after video ends before transitioning
-      const timer = setTimeout(() => {
-        console.log('Delay complete, transitioning to results');
-        onComplete();
-      }, 2000); // 2 second extra delay
+    // Wait for a moment and then complete
+    const timer = setTimeout(() => {
+      onComplete();
+    }, 3000); // Show for 3 seconds
 
-      return () => clearTimeout(timer);
-    }
-  }, [videoEnded, onComplete]);
-
-  // Handle video completion
-  const handleVideoComplete = () => {
-    console.log('Video completion event triggered');
-    setVideoEnded(true);
-  };
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [onComplete]);
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 bg-black"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-purple-900"
     >
-      <div className="w-full h-screen">
-        <VideoPlayer
-          src="/assets/videos/after_analyzing.webm"
-          onComplete={handleVideoComplete}
-          autoPlay={true}
-          loop={false}
-          id="analysis-video"
-          className="w-full h-full object-contain"
-        />
+      <div className="flex flex-col items-center">
+        <div className="mb-8">
+          {/* Logo */}
+          <img
+            src="/images/logo.png"
+            alt="NosePrint Logo"
+            className="w-60 h-60 object-contain"
+          />
+        </div>
+
+        {/* Status text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-white text-xl font-light"
+        >
+          Finalizing Your Scent Profile...
+        </motion.p>
       </div>
     </motion.div>
   );

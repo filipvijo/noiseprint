@@ -1,23 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useScentContext, AppState } from '../context/ScentContext';
-import AnalysisAnimation from './AnalysisAnimation';
 
 const AnalyzingScreen = () => {
   const { t } = useTranslation();
   const { isLoading, error, setAppState } = useScentContext();
-  const [showAnimation, setShowAnimation] = useState(false);
 
-  // Show animation when analysis is complete
+  // Skip animation and go directly to results when analysis is complete
   useEffect(() => {
-    // Only show animation when isLoading transitions from true to false
-    if (!isLoading && !error && !showAnimation) {
-      console.log('Analysis complete, showing animation');
-      // Analysis is complete, show the animation
-      setShowAnimation(true);
+    // Only proceed when isLoading transitions from true to false
+    if (!isLoading && !error) {
+      console.log('Analysis complete, going to results');
+      // Analysis is complete, go directly to results
+      setAppState(AppState.Results);
     }
-  }, [isLoading, error, showAnimation]);
+  }, [isLoading, error, setAppState]);
 
   // Animation variants for the loading dots
   const containerVariants = {
@@ -40,18 +38,11 @@ const AnalyzingScreen = () => {
     },
   };
 
-  // Handle animation completion
-  const handleAnimationComplete = () => {
-    // Move to results screen
-    setAppState(AppState.Results);
-  };
+
 
   return (
     <div className="flex flex-col items-center justify-center h-full relative">
-      {/* Show analysis complete animation */}
-      {showAnimation && (
-        <AnalysisAnimation onComplete={handleAnimationComplete} />
-      )}
+      {/* Animation removed */}
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0 opacity-[0.09]">
