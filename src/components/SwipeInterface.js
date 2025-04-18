@@ -39,18 +39,18 @@ const SwipeInterface = () => {
   // Added gradient background, logo, and adjusted card size
   return (
     <div className="flex flex-col items-center h-full">
-      <div className="text-center mt-8">
-        <div className="w-[300px] h-[150px] mx-auto mb-4">
+      <div className="text-center mt-0">
+        <div className="w-[300px] h-[100px] mx-auto mb-0">
           <img
             src="/images/logo.png"
             alt="NosePrint Logo"
             className="w-full h-full object-contain"
           />
         </div>
-        <p className="text-gray-700 mb-6 text-lg">{t('app.subtitle')}</p>
+        <p className="text-gray-700 mb-0 text-lg">{t('app.subtitle')}</p>
       </div>
 
-      <div className="relative w-[360px] h-[480px] mb-8">
+      <div className="relative w-[360px] h-[480px] mb-2">
         {!isFinished ? (
           <SwipeCard
             key={currentScent.id}
@@ -71,7 +71,7 @@ const SwipeInterface = () => {
       </div>
 
       {!isFinished && (
-        <div className="flex gap-6">
+        <div className="flex gap-6 -mt-1">
           <motion.button
             whileTap={{ scale: 0.9 }}
             className="bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-md"
@@ -94,7 +94,7 @@ const SwipeInterface = () => {
         </div>
       )}
 
-      <div className="w-full max-w-md mt-8">
+      <div className="w-full max-w-md mt-2">
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div
             className="bg-gradient-to-r from-purple-500 to-pink-500 h-2.5 rounded-full"

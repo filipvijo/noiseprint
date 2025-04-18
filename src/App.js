@@ -40,7 +40,7 @@ const AppContent = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative">
+    <div className="min-h-screen flex items-start justify-center pt-1 px-4 relative">
       <BackgroundVisual />
 
       {/* Preload images */}
