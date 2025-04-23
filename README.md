@@ -2,7 +2,8 @@
 
 NosePrint is an interactive web application that helps users discover their unique scent profile and find their perfect fragrance match.
 
-![NosePrint App](public/assets/images/amber.png)
+![scentprint](https://github.com/user-attachments/assets/69f651b3-b210-490c-98a3-16eb84b67d29)
+
 
 ## Features
 
@@ -83,6 +84,4 @@ This application can be easily deployed using Vercel:
 - Integration with more fragrance retailers
 - Mobile app version
 
-## License
 
-[MIT](LICENSE)
