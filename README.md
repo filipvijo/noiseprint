@@ -1,6 +1,6 @@
-# NosePrint
+# ScentPrint
 
-NosePrint is an interactive web application that helps users discover their unique scent profile and find their perfect fragrance match.
+ScentPrint is an interactive web application that helps users discover their unique scent profile and find their perfect fragrance match.
 
 ![scentprint](https://github.com/user-attachments/assets/69f651b3-b210-490c-98a3-16eb84b67d29)
 
